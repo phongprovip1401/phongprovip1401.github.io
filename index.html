@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>phong2079</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <style>
+        body {
+            background: url('assets/img/kitty_wallpaper.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        :root {
+            --first-color: hsl(330, 80%, 72%);
+            --first-color-light: hsl(330, 100%, 85%);
+            --black-color: hsl(330, 20%, 20%);
+            --text-color: hsl(330, 30%, 50%);
+            --body-color: hsl(330, 100%, 98%);
+        }
+        .card__name, .card__profession {
+            color: #fff !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .view-counter {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            color: #000 !important;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background-color: rgba(255, 182, 193, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .view-counter i {
+            margin-right: 0.5rem;
+        }
+        .card__border {
+            position: relative;
+        }
+        .status-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            border: 2px solid #fff;
+        }
+        .card__timework {
+            margin-top: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #ffc0cb;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.6);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body onload="incrementView(); setStatus()">
+    <div class="view-counter">
+        <i class="ri-eye-line"></i>
+        <span id="viewCount">0</span>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card__border" id="avatarBorder">
+                <img src="assets/img/avt.jpg" alt="card image" class="card__img">
+                <div class="status-dot" id="statusDot"></div>
+            </div>
+
+            <h3 class="card__name">Nguyễn Thiên Phong</h3>
+            <span class="card__profession">Node.js Developer</span>
+            <div class="card__timework">Timework 12:00 PM - 02:00 AM</div>
+
+            <div class="card__social" id="card-social">
+                <div class="card__social-control">
+                    <div class="card__social-toggle" id="card-toggle">
+                        <i class="ri-add-line"></i>
+                    </div>
+                    <span class="card__social-text">My social networks</span>
+                    <ul class="card__social-list">
+                        <a href="https://www.facebook.com/phong2079" target="_blank" class="card__social-link">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="https://github.com/phongprovip1401" target="_blank" class="card__social-link">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/31qifjnarllzp5jmkmzsoqk2aveu" target="_blank" class="card__social-link">
+                            <i class="ri-spotify-fill"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const viewKey = 'profile_view_count';
+        function incrementView() {
+            let count = localStorage.getItem(viewKey);
+            count = count ? parseInt(count) + 1 : 1;
+            localStorage.setItem(viewKey, count);
+            document.getElementById('viewCount').textContent = count;
+        }
+
+        function setStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const statusDot = document.getElementById('statusDot');
+            const avatarBorder = document.getElementById('avatarBorder');
+
+            if ((hour >= 12 && hour < 24) || (hour >= 0 && hour < 2)) {
+                statusDot.style.backgroundColor = 'green';
+                avatarBorder.style.borderColor = 'green';
+            } else {
+                statusDot.style.backgroundColor = 'red';
+                avatarBorder.style.borderColor = 'red';
+            }
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
