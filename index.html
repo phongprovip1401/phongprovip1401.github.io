@@ -117,7 +117,7 @@
     <script>
         const viewKey = 'profile_view_count';
         function incrementView() {
-            let count = localStorage.getItem(viewKey);
+            let count = 512; // xai localStorage.getItem(viewKey) neu muon get tu ng dung
             count = count ? parseInt(count) + 1 : 1;
             localStorage.setItem(viewKey, count);
             document.getElementById('viewCount').textContent = count;
