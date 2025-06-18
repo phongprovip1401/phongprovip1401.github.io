@@ -1,0 +1,14 @@
+/* electric-tentacles-el */
+
+/* body,
+html {
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    background: rgb(30,30,30);
+} */
+
+.electric-tentacles-el {
+    position: absolute;
+    z-index: -10;
+}
