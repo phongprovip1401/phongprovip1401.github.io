@@ -1,10 +1,5 @@
 # 🌟 Portfolio Website - Phong2079
 
-[![GitHub stars](https://img.shields.io/github/stars/phongprovip1401/portfolio?style=social)](https://github.com/phongprovip1401/portfolio)
-[![GitHub forks](https://img.shields.io/github/forks/phongprovip1401/portfolio?style=social)](https://github.com/phongprovip1401/portfolio)
-[![GitHub issues](https://img.shields.io/github/issues/phongprovip1401/portfolio)](https://github.com/phongprovip1401/portfolio/issues)
-[![GitHub license](https://img.shields.io/github/license/phongprovip1401/portfolio)](https://github.com/phongprovip1401/portfolio/blob/main/LICENSE)
-
 ## 📋 Mô tả
 
 Đây là website portfolio cá nhân của tôi - **Phong2079**, một Node.js Backend Developer chuyên về phát triển API và các dịch vụ backend. Website được thiết kế với giao diện hiện đại, responsive và có nhiều hiệu ứng tương tác thú vị.
